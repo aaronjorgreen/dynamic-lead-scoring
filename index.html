@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crypto Web Agency — Lead Qualification</title>
+  <meta name="description" content="Find out if you're a fit for our crypto website builds. Answer 4 quick questions and receive a personalised recommendation in under 2 minutes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Background orbs for ambient glow -->
+  <div class="bg-orb bg-orb--1" aria-hidden="true"></div>
+  <div class="bg-orb bg-orb--2" aria-hidden="true"></div>
+
+  <main id="app">
+
+    <!-- ───────────────────────── INTRO SCREEN ───────────────────────── -->
+    <section id="intro-screen" class="screen screen--active" aria-label="Introduction">
+      <div class="card intro-card">
+        <div class="badge intro-badge">🚀 Free Qualification Tool</div>
+        <h1 class="intro-headline">Is Your Crypto Project<br />a Right Fit For Us?</h1>
+        <p class="intro-subtext">
+          Answer 4 quick questions about your website project. We'll score your answers
+          and give you an honest recommendation — plus the perfect next step.
+        </p>
+        <p class="intro-meta">⏱ Takes less than 2 minutes &nbsp;·&nbsp; No email required</p>
+        <button id="start-btn" class="btn btn--primary" aria-label="Start the qualification quiz">
+          Start Qualification
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── QUESTION SCREEN ───────────────────────── -->
+    <section id="question-screen" class="screen" aria-label="Quiz question" aria-live="polite">
+      <div class="card question-card">
+
+        <!-- Progress -->
+        <div class="progress-wrapper" role="progressbar" aria-label="Quiz progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+          <span id="progress-label" class="progress-label">Question 1 of 4</span>
+        </div>
+
+        <!-- Question text -->
+        <p id="question-number" class="question-number">Q1</p>
+        <h2 id="question-text" class="question-text"></h2>
+
+        <!-- Answer options -->
+        <div id="answer-options" class="answer-options" role="group" aria-label="Answer options"></div>
+
+        <!-- Navigation -->
+        <div class="question-nav">
+          <button id="next-btn" class="btn btn--primary btn--disabled" disabled aria-label="Next question">
+            Next
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ───────────────────────── RESULTS SCREEN ───────────────────────── -->
+    <section id="results-screen" class="screen" aria-label="Quiz results" aria-live="polite">
+      <div class="card results-card">
+
+        <p class="results-label">Your Result</p>
+        <div id="tier-badge" class="tier-badge"></div>
+        <p id="score-display" class="score-display"></p>
+        <p id="tier-description" class="tier-description"></p>
+
+        <div id="cta-block" class="cta-block">
+          <h2 id="cta-headline" class="cta-headline"></h2>
+          <p id="cta-body" class="cta-body"></p>
+          <a id="cta-btn" href="#" class="btn btn--primary cta-action-btn" aria-label="Call to action">
+            <span id="cta-btn-text"></span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <button id="reset-btn" class="reset-link" aria-label="Retake the quiz">
+          ↺ Start Over
+        </button>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
