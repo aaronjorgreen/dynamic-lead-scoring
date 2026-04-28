@@ -10,10 +10,16 @@ This guide defines the standard process an AI Coding Agent should use when inter
   - For features: Include user story, requirements, and acceptance criteria.
 - **Linking**: Clearly link the issue to any relevant repository files, pull requests, or other related issues in the body.
 
-## 2. Labelling
-- Agents should provide appropriate semantic labels when creating or updating issues.
-- Examples include `bug`, `enhancement`, `documentation`, `help wanted`.
-- Use the `labels` array property in the `mcp_github-mcp-server_issue_write` tool.
+## 2. Labelling *(Mandatory)*
+- **Every issue MUST have at least one label.** An issue without a label is considered incomplete.
+- Labels must be applied at the time of creation using the `labels` array in the `mcp_github-mcp-server_issue_write` tool.
+- Standard labels to use:
+  - `bug` — for defects or broken behaviour
+  - `enhancement` — for new features or improvements
+  - `documentation` — for guides, README updates, or spec files
+  - `help wanted` — for issues awaiting input or blocked on external dependency
+  - `chore` — for maintenance tasks with no user-facing change
+- If none of the above fit, create a new descriptive label before opening the issue.
 
 ## 3. Issue Management
 - **Tool**: `mcp_github-mcp-server_issue_write` (using `method: "update"`)
